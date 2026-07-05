@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# lint.sh — enforce the clear-tech-docs rules on a markdown doc.
+# lint.sh: enforce the clear-tech-docs rules on a markdown doc.
 #
 # Fails (exit 1) if the file contains AI tells:
 #   - em dashes (U+2014) or " -- " pseudo-dashes
@@ -33,7 +33,7 @@ awk '/^```/{c=!c; next} c{next} {gsub(/`[^`]*`/,""); print}' "$file" > "$tmp"
 hits=0
 echo "lint: $file"
 
-# 1. Em dashes (U+2014) and " -- " pseudo-dashes — banned outright.
+# 1. Em dashes (U+2014) and " -- " pseudo-dashes. Banned outright.
 n=$(grep -cP '\x{2014}| -- ' "$tmp" || true)
 grep -nP '\x{2014}| -- ' "$tmp" | sed 's/^/  [em-dash] /' || true
 hits=$((hits + n))
