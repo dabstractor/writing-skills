@@ -4,7 +4,7 @@ Agent Skills that help AI coding agents write plain, specific technical document
 
 ## Skills
 
-- **[`clear-tech-docs`](skills/clear-tech-docs/SKILL.md)**: writes or revises technical docs (READMEs, guides, API docs, code comments) so a reader can act on them. Covers scannable structure, plain prose, task-oriented steps, consistent terminology, and removing AI tell-words.
+- **[`clear-tech-docs`](skills/clear-tech-docs/SKILL.md)**: writes or revises technical docs (READMEs, guides, API docs, code comments) so they are clear, short, and do not read like AI output. Hard rules: no em dashes, no marketing tell-words, no hedging or formulaic transitions, no narrating the codebase. Ships [`scripts/lint.sh`](skills/clear-tech-docs/scripts/lint.sh), a gate the agent must pass before finishing (`bash scripts/lint.sh your-file.md`).
 
 ## Install
 
