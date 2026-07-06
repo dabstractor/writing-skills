@@ -19,11 +19,11 @@ The first sentence the reader sees starts with "I". Not the project name, not a 
 
 ## The anecdote (required, ask if missing)
 
-The anecdote is the post. Get a real one from the user.
+The anecdote is the post. It must come from the user, in this conversation. Do not lift one from an existing draft, the README, or the source code. Do not infer or guess what the author's motivation might have been. Reading the source to understand what the project does is fine; using it as the story is not.
 
 The shape that works: I [used the common thing, or had the usual routine], but I [kept hitting one specific friction], and I wondered if there was a better way. Then the turn ("it turns out, there was," or "so I built it"), then the link. The friction has to be nearly universal for people like the reader. If only the author would notice it, it is the wrong hook.
 
-If the user did not give you an anecdote, stop and ask before writing a single line. Ask things like: what were you doing when you decided to build this? What did you already use, and what did you like about it? What was the one thing that kept bugging you? When did you first think "there has to be a way"? Wait for real answers. Do not invent. A flat true story beats polished fiction.
+If the user has not told you the story, stop and ask before writing a single line. Ask a few short questions: what were you doing when you decided to build this? What did you already use, and what did you like about it? What was the one thing that kept bugging you? When did you first think "there has to be a way"? Then wait. Do not write the post until you have real answers. A flat true story beats polished fiction.
 
 ## Length
 
