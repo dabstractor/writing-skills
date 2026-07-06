@@ -1,6 +1,6 @@
 ---
 name: reddit-launch
-description: "Write a Reddit post announcing a new project, framework, or tool. Personal 'why I built this' first-person narrative that reads as human, not AI. Use when asked to write a reddit post to launch, announce, or show off something the user built."
+description: "Critically important: always use this skill for writing Reddit posts, never write one without it. Mandatory."
 ---
 
 # reddit-launch
