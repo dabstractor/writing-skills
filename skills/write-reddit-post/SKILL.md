@@ -56,12 +56,12 @@ These are not preferences.
 
 ## Audience
 
-A post lands or flops based on fitting the subreddit. Know the audience before you write.
+Pick one primary subreddit and write the post for it. The post is a single piece of content: you cross-post the exact same post anywhere else. Never write different versions per subreddit.
 
-- If the user named the subreddit, write to that community's norms and technical level.
-- If they did not, ask which subreddits they plan to post in. Suggest two or three that fit, based on what the project is and who would care. For a developer tool, candidates include r/programming, r/webdev, r/selfhosted, r/commandline, r/sysadmin, r/linux, or the language or framework's own sub (r/python, r/rust, r/golang, r/javascript, r/reactjs). Pick the ones that actually match. Do not list all of them.
-- Match depth to the room. Even a short post can be too technical, or not technical enough.
-- Read the room. Flag anything that could get the post removed or buried: self-promotion limits, no blog links, a required title format, a flair.
+- If the user named one subreddit, that is the primary.
+- If they named several, treat the best fit as the primary and cross-post the identical post to the rest. Do not tailor per sub.
+- If they named none, ask for the primary target. Suggest a couple that fit based on what the project is and who would care (for a developer tool: r/programming, r/webdev, r/selfhosted, r/commandline, r/sysadmin, r/linux, or the language or framework's own sub). Pick the best single fit.
+- Write to the primary sub's technical level, and check its rules for anything that could get the post removed or buried: self-promotion limits, no blog links, a required title format, a flair.
 
 ## Flow (avoid choppiness)
 
