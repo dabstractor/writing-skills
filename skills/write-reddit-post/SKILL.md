@@ -1,6 +1,6 @@
 ---
 name: write-reddit-post
-description: "Critically important: always use this skill for writing Reddit posts, never write one without it. Mandatory."
+description: "Always use this skill for writing Reddit posts, never write one without it."
 ---
 
 # write-reddit-post
@@ -35,6 +35,15 @@ These are not preferences.
 Open with one concrete, real moment. A bug at 3am. A task you kept repeating. A tool that almost worked but did not do the one thing you needed. It does not need drama. "I kept hitting X, so I built Y" is enough.
 
 If the user gives you no story, ask for one: what were they doing when the frustration hit, what did they try first, what was the moment they decided to build it themselves. Do not invent details. A bland true story beats a polished fake one.
+
+## Audience
+
+A post lands or flops based on fitting the subreddit. Know the audience before you write.
+
+- If the user named the subreddit, write to that community's norms and technical level.
+- If they did not, ask which subreddits they plan to post in. Suggest two or three that fit, based on what the project is and who would care. For a developer tool, candidates include r/programming, r/webdev, r/selfhosted, r/commandline, r/sysadmin, r/linux, or the language or framework's own sub (r/python, r/rust, r/golang, r/javascript, r/reactjs). Pick the ones that actually match. Do not list all of them.
+- Match depth to the room. r/programming wants the gist and a demo. A language sub wants the technical detail. r/selfhosted wants the install story and the self-hosting angle.
+- Read the room. Each sub has rules and a culture. Flag anything that could get the post removed or buried: self-promotion limits, no blog links, a required title format, a flair.
 
 ## Flow (avoid choppiness)
 
