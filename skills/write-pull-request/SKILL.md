@@ -5,9 +5,22 @@ description: "Write a pull request to an open source repository. Lead with the u
 
 # write-pull-request
 
-Write a pull request to someone else's open source project. The audience is the maintainer: busy, protective of the codebase, and allergic to filler.
+Write a pull request, most often to an open source project, sometimes to an internal one. The audience is the maintainer: busy, protective of the codebase, and allergic to filler.
 
-A good PR is a little bit reddit (a person explaining what they hit), a little bit readme (clear, scannable, technical), and a little bit git commit message (terse, imperative, signal-dense). Lean technical, written in a personal voice. You are a contributor talking to a maintainer, not a marketer or a lecturer.
+A good PR is a little bit reddit (a person explaining what they hit), a little bit readme (clear, scannable, technical), and a little bit git commit message (terse, imperative, signal-dense). Lean technical, written in a personal voice. For open source that voice is also gracious; for an enterprise project it reads like technical docs, terse and factual with no regard for feelings. Most PRs are open source.
+
+Before writing anything else, do two things: read the diff so you know exactly what changed, and check for a linked issue.
+
+## Diff first
+
+Read the actual change before you write a word of the description. Do not describe a fix you have not seen in the diff.
+
+Figure out the right comparison if nobody specified it, so you understand the exact scope:
+- On a feature branch, diff against the base branch, usually `main` or `master`. Use the merge base to see only this branch's changes: find it with `git merge-base HEAD <base>`, then diff from that commit to HEAD.
+- For unpushed commits, review `git log <upstream>..HEAD` and `git diff <upstream>...HEAD`.
+- For uncommitted work, use `git diff` and `git diff --staged`.
+
+Find the default branch if you do not know it (`git symbolic-ref refs/remotes/origin/HEAD 2>/dev/null`, or inspect `origin`). Read the whole diff. The "what this changes" section must match the real diff, change for change. If something is not in the diff, do not claim it.
 
 ## Issue first
 
@@ -30,6 +43,7 @@ If the user has not told you what they were doing when they hit this, ask. Do no
 ## Structure
 
 - **Title**: one imperative line, like a commit subject. `Add X`, `Fix Y when Z`, `Refactor Q`. Lowercase after the first word unless it is a proper noun. No period at the end. Scope or type prefix only if the project uses conventional commits. If an issue exists, echo its framing. Keep it under about 80 characters.
+- **Opener (open source only)**: one genuine line. A specific compliment about the project and thanks to the maintainers. Skip entirely for enterprise PRs.
 - **Problem**: the user-POV story above, or a one-line pointer to the issue.
 - **What this changes**: the fix, in a short scannable list. Technical, precise, one bullet per logical change, imperative.
 - **Why this way**: only if the choice is non-obvious. A sentence or two on the approach and the alternatives you rejected.
@@ -51,10 +65,18 @@ Match the scope to the change. A one-line fix earns a title, a one-line problem,
 8. **No hedging or filler.** Cut "just," "really," "simply," "I thought it would be nice to." State the change.
 9. **Specific and verifiable.** Real versions, real commands, real test names. Not "tested thoroughly."
 10. **Run the linter before you finish.** `bash scripts/lint.sh <file>`. Fix every hit. Re-run until it exits 0.
+11. **Diff before you write.** Read the full diff first and base the description on it. Never claim a change that is not in the diff.
+12. **Open source: lead with thanks.** If the project is open source, open the body with a genuine compliment and thanks, and stay non-presumptuous throughout. See Tone.
 
-## Voice
+## Tone: open source vs enterprise
 
-Plain, direct, respectful of the maintainer's time. Confident about the change, humble about anything you are unsure of (flag it explicitly). No corporate tone, no enthusiasm theater.
+Figure out which kind of project this is. Open source signals: a public remote (github.com, gitlab.com, and the like), a LICENSE file, a CONTRIBUTING.md, public issues. Enterprise signals: an internal git host, a private repo, no LICENSE. If you cannot tell, ask, or assume open source, since most PRs are.
+
+**Open source: be gracious.** Maintainers are often volunteers and always busy, and rudeness is the fastest way to get a PR ignored or rejected. Open the body with a genuine, specific compliment and real thanks for their work. Never be presumptuous. Do not assume they want this change, want it done your way, or will take it at all. Frame the work as offered, not demanded. "I found this useful and I am offering it in case it helps," not "you should merge this." Offer to rework it to fit their direction. Read CONTRIBUTING.md and match the style of their existing PRs.
+
+**Enterprise: write it like technical docs.** Terse, factual, no politeness, no regard for feelings. Coworkers want the facts and the diff. Skip the opener entirely.
+
+Both: confident about the change, humble about anything you are unsure of (flag it explicitly). No corporate tone, no enthusiasm theater.
 
 ## Banned words (reference)
 
