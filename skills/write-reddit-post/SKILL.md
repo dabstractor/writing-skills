@@ -5,63 +5,65 @@ description: "Always use this skill for writing Reddit posts, never write one wi
 
 # write-reddit-post
 
-Write a short Reddit post that links to something the user built. It is a pitch for the link. It is not a press release, and it is not documentation.
+Write a focused Reddit post that links to something the user built. It is a pitch for the link. It is not a press release, and it is not documentation.
 
 ## The whole game
 
 You are a peer talking to peers, not a professor lecturing. The reader does not yet know they have a problem. Your job is to mirror an experience they already have, so they recognize themselves and think "wait, I do that too." That recognition is what gets them to click. Everything else is filler.
 
-The repo has a README. Do not reproduce it. The post says three things and stops: a personal anecdote that mirrors the reader's experience, the link, and one line on the general idea of the fix.
+The repo has a README. Do not reproduce it.
 
-## Start with "I"
+## First-person voice
 
-The first sentence the reader sees starts with "I". Not the project name, not a general claim about the world. "I" puts you on the reader's level and grounds the post in a real experience. The linter fails if the opening does not start with "I".
+Write as the author, in first person, throughout. "I" should run through the whole post. The opening may set the scene first ("In [context], I kept...") before the first "I" lands, as long as a real person is talking, not a product page.
 
-## The anecdote (required, ask if missing)
+## The problem (required, ask if missing)
 
-The anecdote is the post. It must come from the user, in this conversation. Do not lift one from an existing draft, the README, or the source code. Do not infer or guess what the author's motivation might have been. Reading the source to understand what the project does is fine; using it as the story is not.
+The post opens by mirroring the reader's experience. Make the problem vivid and specific, not abstract. Give two or three concrete moments the reader has lived: when X happens, you catch yourself doing Y, and you feel Z. Those beats are what make a stranger nod and keep reading.
 
-The shape that works: I [used the common thing, or had the usual routine], but I [kept hitting one specific friction], and I wondered if there was a better way. Then the turn ("it turns out, there was," or "so I built it"), then the link. The friction has to be nearly universal for people like the reader. If only the author would notice it, it is the wrong hook.
+Then, in a sentence or two: what you already used, what it cost you, where it fell short, and why you built this. End that beat with the general approach in one plain line.
 
-If the user has not told you the story, stop and ask before writing a single line. Ask a few short questions: what were you doing when you decided to build this? What did you already use, and what did you like about it? What was the one thing that kept bugging you? When did you first think "there has to be a way"? Then wait. Do not write the post until you have real answers. A flat true story beats polished fiction.
+This must come from the user, in this conversation. Do not lift it from an existing draft, the README, or the source code, and do not infer the author's motivation. Reading the source to understand what the project does is fine; using it as the story is not.
+
+If the user has not given you the problem and the lived experience, stop and ask before writing a single line. Ask a few short questions: what were you doing when you decided to build this? What did you already use, and what did you like about it? What were the specific moments that bugged you? When did you first think "there has to be a way"? Then wait. Do not write the post until you have real answers. A flat true story beats polished fiction.
 
 ## Length
 
-Short. The anecdote is often the whole title. One short paragraph of body at most. Aim for about 80 words. The linter fails past 100.
+Focused, not tiny. Two or three short paragraphs. Aim for about 150 words. The linter fails past 175. The vivid problem is what earns the length; cut anything that is not the reader recognizing their own experience.
 
 ## Shape
 
-- Title: the anecdote itself, or its hook. The "I ... but ... I wondered ..." line often works as a title on its own.
-- First line of body: the anecdote, starting with "I", mirroring a nearly-universal experience.
+- Title: the project name, then what it does and the payoff for the reader. "[Project]: [what it does] so you can [the thing they want]."
+- First paragraph: the problem, vivid. Two or three specific, recognizable scenarios, first person.
+- Second paragraph: what you already used, what it cost, where it fell short, your motivation, and the general approach in one plain line.
 - The link.
-- Optionally, one sentence on the general technique: the concept of the fix in plain words, not the implementation.
+- A caveat only when it changes whether someone should bother clicking.
 
-No feature list. No requirements, license, or palettes. No "how it works." No "why existing tools fell short." No "what's next." No closing question unless it rises on its own.
+No feature list. No requirements, license, or palettes. No "how it works." No "what's next." No closing question unless it rises on its own.
 
 ## Title hook
 
-The title is the hook. It has to make a stranger want to know the answer. A flat report of what you did gives no reason to click.
+The title is the hook. Make a stranger want to click.
 
-- Build in tension: the relatable friction, then a turn that promises a payoff. "I loved [the common thing], but [one specific annoyance] kept biting me, so I [did something about it]."
-- Or a curiosity gap: hint that there is a surprising answer without giving it away. A turn like "...it turns out, there was" makes the reader want to know what.
-- Specific beats generic. One odd, concrete detail sticks. A vague complaint does not.
-- If the title reads like a summary with no tension, rewrite it. The reader should finish it thinking "wait, what?" or "I do that too."
+- Payoff hook (default): name what the tool does and the payoff for the reader. "[Project]: [mechanism] so you can [stop doing the annoying thing]." The "so you can..." is the hook.
+- Or tension: the relatable friction and a turn. "I [used the common thing], but [one specific annoyance], so I [did something about it]."
+- Specific beats generic. One concrete detail sticks; a vague claim does not.
+- If the title reads like a flat summary, rewrite it.
 
 ## Hard rules
 
 These are not preferences.
 
-1. **Open with "I".** The first sentence starts with "I". Peer voice, not professor voice. The linter enforces this.
-2. **No em dashes.** Use a comma, period, or parentheses.
-3. **Full first person, always.** Every sentence about the author's own actions starts with "I". Never drop it.
-4. **Plain text, no markdown.** No bold, headers, italics, backticks, or asterisks. Paragraphs separated by blank lines. Paste bare URLs.
-5. **No semicolons.**
-6. **No hashtags.**
-7. **No documentation.** No features, options, config, requirements, license, palettes, or implementation details. That is the README's job. Name only the general technique, in one line.
-8. **No formulaic transitions or signposting.** Cut "moreover," "furthermore," "however," "hence," "in conclusion," "in summary," "it's worth noting."
-9. **No hedging filler.** Cut "just," "really," "very," "actually," "basically," "literally," "probably," "maybe."
-10. **Cut "that" when it is filler.** "I thought that it was slow" becomes "I thought it was slow."
-11. **Run the linter before you finish.** `bash scripts/lint.sh <file>`. Fix every hit. Re-run until it exits 0.
+1. **No em dashes.** Use a comma, period, or parentheses.
+2. **Full first person, always.** Write as the author, in first person, throughout. Never drop the "I" from a sentence about your own actions.
+3. **Plain text, no markdown.** No bold, headers, italics, backticks, or asterisks. Paragraphs separated by blank lines. Paste bare URLs.
+4. **No semicolons.**
+5. **No hashtags.**
+6. **No documentation.** No features, options, config, requirements, license, palettes, or implementation details. That is the README's job. Name only the general technique, in one line.
+7. **No formulaic transitions or signposting.** Cut "moreover," "furthermore," "however," "hence," "in conclusion," "in summary," "it's worth noting."
+8. **No hedging filler.** Cut "just," "really," "very," "actually," "basically," "literally," "probably," "maybe."
+9. **Cut "that" when it is filler.** "I thought that it was slow" becomes "I thought it was slow."
+10. **Run the linter before you finish.** `bash scripts/lint.sh <file>`. Fix every hit. Re-run until it exits 0.
 
 ## Audience
 
@@ -84,7 +86,7 @@ Short does not mean staccato. Human prose flows and varies in length.
 
 ## Voice
 
-Humble and plain. Say what it does and stop. Do not oversell. Include a caveat only when it changes whether someone should bother clicking. No mandated closing question.
+Humble and plain. Say what it does and stop. Do not oversell. A caveat is fine when it changes whether someone should click. No mandated closing question.
 
 ## Banned words (reference)
 
@@ -96,4 +98,4 @@ Note: function words like "it," "that" (as a pronoun), "can," and "may" are fine
 
 ## Lint gate
 
-`bash scripts/lint.sh <file>` fails on: an opening that does not start with "I", em dashes, markdown formatting, semicolons, hashtags, banned words, sentences that drop the leading "I", runs of short choppy sentences, and body over 100 words. Run it on the draft. Fix every hit. Re-run until it passes.
+`bash scripts/lint.sh <file>` fails on: em dashes, markdown formatting, semicolons, hashtags, banned words, sentences that drop the leading "I", runs of short choppy sentences, and body over 175 words. Run it on the draft. Fix every hit. Re-run until it passes.
