@@ -1,10 +1,11 @@
 # writing-skills
 
-Agent Skills that help AI coding agents write plain, specific technical documentation. Each skill is a self-contained `SKILL.md` you can load into any harness that supports the [Agent Skills standard](https://agentskills.io/).
+Agent Skills that help AI agents write like a person, not like AI. Each skill targets one genre of writing and ships a linter the agent must pass. Every skill is a self-contained `SKILL.md` you can load into any harness that supports the [Agent Skills standard](https://agentskills.io/).
 
 ## Skills
 
 - **[`clear-tech-docs`](skills/clear-tech-docs/SKILL.md)**: writes or revises technical docs (READMEs, guides, API docs, code comments) so they are clear, short, and do not read like AI output. Hard rules: no em dashes, no marketing tell-words, no hedging or formulaic transitions, no narrating the codebase. Ships [`scripts/lint.sh`](skills/clear-tech-docs/scripts/lint.sh), a gate the agent must pass before finishing (`bash scripts/lint.sh your-file.md`).
+- **[`reddit-launch`](skills/reddit-launch/SKILL.md)**: writes a Reddit post announcing something the user built. Personal first-person "why I built this" narrative that reads as human, not AI. Hard rules: full first person always (never drop the leading "I"), no em dashes, no markdown, no banned tell-words. Ships [`scripts/lint.sh`](skills/reddit-launch/scripts/lint.sh) that also catches the dropped-"I" tell.
 
 ## Install
 
