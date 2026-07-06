@@ -38,6 +38,15 @@ Short. The anecdote is often the whole title. One short paragraph of body at mos
 
 No feature list. No requirements, license, or palettes. No "how it works." No "why existing tools fell short." No "what's next." No closing question unless it rises on its own.
 
+## Title hook
+
+The title is the hook. It has to make a stranger want to know the answer. A flat report of what you did gives no reason to click.
+
+- Build in tension: the relatable friction, then a turn that promises a payoff. "I loved [the common thing], but [one specific annoyance] kept biting me, so I [did something about it]."
+- Or a curiosity gap: hint that there is a surprising answer without giving it away. A turn like "...it turns out, there was" makes the reader want to know what.
+- Specific beats generic. One odd, concrete detail sticks. A vague complaint does not.
+- If the title reads like a summary with no tension, rewrite it. The reader should finish it thinking "wait, what?" or "I do that too."
+
 ## Hard rules
 
 These are not preferences.
