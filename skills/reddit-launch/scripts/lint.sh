@@ -64,6 +64,29 @@ if [[ -n "$dropped" ]]; then
   hits=$((hits + $(printf '%s\n' "$dropped" | grep -c .)))
 fi
 
+# 7. Continuation starters: sentence-initial So/And/But/Then/Also/Plus signals a missed merge.
+starters='So|And|But|Then|Also|Plus'
+cont="$(sed 's/[.!?]\+/&\n/g' "$tmp" | grep -nE "^[[:space:]]*([-•][[:space:]]*)?($starters)([,[:space:]]|$)" || true)"
+if [[ -n "$cont" ]]; then
+  printf '%s\n' "$cont" | sed 's/^/  [starter] /'
+  hits=$((hits + $(printf '%s\n' "$cont" | grep -c .)))
+fi
+
+# 8. Choppiness: 3+ consecutive sentences of 7 words or fewer.
+chop="$(sed 's/[.!?]\+/&\n/g' "$tmp" | awk -v max=7 -v thr=3 '
+  {
+    s=$0; sub(/^[[:space:]]+/,"",s); sub(/[[:space:]]+$/,"",s);
+    if (s=="") { if (run>=thr) printf "[choppy] run of %d short sentences\n", run; run=0; next }
+    n=split(s, w, /[[:space:]]+/);
+    if (n<=max) run++; else { if (run>=thr) printf "[choppy] run of %d short sentences\n", run; run=0 }
+  }
+  END { if (run>=thr) printf "[choppy] run of %d short sentences\n", run }
+')"
+if [[ -n "$chop" ]]; then
+  printf '%s\n' "$chop" | sed 's/^/  /'
+  hits=$((hits + $(printf '%s\n' "$chop" | grep -c .)))
+fi
+
 echo "lint: $hits hit(s)"
 [[ "$hits" -gt 0 ]] && exit 1
 exit 0

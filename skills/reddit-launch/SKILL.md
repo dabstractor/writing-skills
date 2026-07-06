@@ -36,6 +36,19 @@ Open with one concrete, real moment. A bug at 3am. A task you kept repeating. A 
 
 If the user gives you no story, ask for one: what were they doing when the frustration hit, what did they try first, what was the moment they decided to build it themselves. Do not invent details. A bland true story beats a polished fake one.
 
+## Flow (avoid choppiness)
+
+Short, uniform sentences read robotic. Human prose flows and varies in length. Apply these until the post reads natural aloud.
+
+- Do not start a sentence with "So", "And", "But", "Then" when it just continues the previous thought. Merge them, or rewrite with subordination. The linter flags these.
+  - Choppy: "I wanted something for a second monitor. So I wrote Loglet."
+  - Flows: "I wrote Loglet because I wanted something for a second monitor."
+- Subordinate related ideas. Cause becomes "because" or "since". Purpose becomes "so that". Time becomes "when" or "while".
+- Do not repeat the subject pronoun across coordinated verbs. "It tails files and it shows the last lines" becomes "It tails files and shows the last lines."
+- Use a colon and an infinitive to define or emphasize one job. "It has exactly one job: to tail files and show the last N lines per source."
+- Vary sentence length on purpose. Mix a short punchy line with longer flowing ones. A post where every sentence is six to nine words reads as AI. The linter flags runs of three or more short sentences.
+- Spartanness is about filler, not length. Cut "just", "really", "that" as filler. Do not force every sentence short. A clean twenty-word sentence beats two choppy eight-word ones.
+
 ## Voice
 
 Humble and honest. Say what the project does and what it does not do yet. Do not oversell. Do not bash existing tools; say what was missing for your case. End with one specific, real question for readers. Do not end with "Let me know your thoughts!" or "Feedback welcome!" Those sign-offs are tells.
@@ -49,7 +62,7 @@ Humble and honest. Say what the project does and what it does not do yet. Do not
 - Fourth (optional): one technical detail worth sharing.
 - Last: what is missing, what is next, one real question.
 
-Keep it short. A few tight paragraphs. Resist the urge to document every feature. That is what the README is for.
+Keep it tight, but let sentences flow and vary in length. A few paragraphs. Resist the urge to document every feature. That is what the README is for.
 
 ## Banned words (reference)
 
