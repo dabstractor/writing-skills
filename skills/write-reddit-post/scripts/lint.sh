@@ -87,6 +87,14 @@ if [[ -n "$chop" ]]; then
   hits=$((hits + $(printf '%s\n' "$chop" | grep -c .)))
 fi
 
+# 9. Length cap: a launch post is short. Excludes URLs and code from the count.
+WORD_CAP=120
+body_words=$(grep -vE 'https?://|www\.' "$tmp" | wc -w | tr -d ' ')
+if [[ "$body_words" -gt "$WORD_CAP" ]]; then
+  printf '  [too-long] %s words, cap %s. Cut to the problem, the link, one line on the technique.\n' "$body_words" "$WORD_CAP"
+  hits=$((hits + 1))
+fi
+
 echo "lint: $hits hit(s)"
 [[ "$hits" -gt 0 ]] && exit 1
 exit 0
