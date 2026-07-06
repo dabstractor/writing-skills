@@ -1,9 +1,9 @@
 ---
-name: clear-tech-docs
+name: write-tech-docs
 description: "Write or revise technical documentation (READMEs, guides, API docs, proposals, code comments) so it is clear, credible, and short, and does not read like AI output. Enforces hard rules: no em dashes, no marketing tell-words, no hedging or formulaic transitions, no narrating the codebase. Ships a linter (scripts/lint.sh) the agent must pass before finishing. Use whenever writing, rewriting, or improving any technical doc, or when prose sounds robotic, marketing-y, or 'too AI'."
 ---
 
-# clear-tech-docs
+# write-tech-docs
 
 Goal: after reading the least text possible, the reader can do the thing. Two standards. **Clarity:** they can act. **Credibility:** every claim is earned. The enemies are vagueness, unearned enthusiasm, hedging, and narration of things the reader can already see.
 

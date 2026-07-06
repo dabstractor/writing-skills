@@ -1,9 +1,9 @@
 ---
-name: reddit-launch
+name: write-reddit-post
 description: "Critically important: always use this skill for writing Reddit posts, never write one without it. Mandatory."
 ---
 
-# reddit-launch
+# write-reddit-post
 
 Write a Reddit post (think r/programming, r/selfhosted, r/webdev) announcing something the user built. The post must read like one person talking to other people, not like marketing or AI output. Reddit readers spot AI writing fast, so the bar is high.
 

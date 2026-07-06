@@ -4,8 +4,8 @@ Agent Skills that help AI agents write like a person, not like AI. Each skill ta
 
 ## Skills
 
-- **[`clear-tech-docs`](skills/clear-tech-docs/SKILL.md)**: writes or revises technical docs (READMEs, guides, API docs, code comments) so they are clear, short, and do not read like AI output. Hard rules: no em dashes, no marketing tell-words, no hedging or formulaic transitions, no narrating the codebase. Ships [`scripts/lint.sh`](skills/clear-tech-docs/scripts/lint.sh), a gate the agent must pass before finishing (`bash scripts/lint.sh your-file.md`).
-- **[`reddit-launch`](skills/reddit-launch/SKILL.md)**: writes a Reddit post announcing something the user built. Personal first-person "why I built this" narrative that reads as human, not AI. Hard rules: full first person always (never drop the leading "I"), no em dashes, no markdown, no banned tell-words. Ships [`scripts/lint.sh`](skills/reddit-launch/scripts/lint.sh) that also catches the dropped-"I" tell.
+- **[`write-tech-docs`](skills/write-tech-docs/SKILL.md)**: writes or revises technical docs (READMEs, guides, API docs, code comments) so they are clear, short, and do not read like AI output. Hard rules: no em dashes, no marketing tell-words, no hedging or formulaic transitions, no narrating the codebase. Ships [`scripts/lint.sh`](skills/write-tech-docs/scripts/lint.sh), a gate the agent must pass before finishing (`bash scripts/lint.sh your-file.md`).
+- **[`write-reddit-post`](skills/write-reddit-post/SKILL.md)**: writes a Reddit post announcing something the user built. Personal first-person "why I built this" narrative that reads as human, not AI. Hard rules: full first person always (never drop the leading "I"), no em dashes, no markdown, no banned tell-words. Ships [`scripts/lint.sh`](skills/write-reddit-post/scripts/lint.sh) that also catches the dropped-"I" tell.
 
 ## Install
 
@@ -18,7 +18,7 @@ git clone https://github.com/dabstractor/writing-skills.git
 **pi**: load one skill for a single session.
 
 ```bash
-pi --skill ./writing-skills/skills/clear-tech-docs
+pi --skill ./writing-skills/skills/write-tech-docs
 ```
 
 Or load every skill permanently by adding the directory to `~/.pi/agent/settings.json`:
@@ -37,7 +37,7 @@ Skills activate when their description matches your task. To install one but hid
 disable-model-invocation: true
 ```
 
-Then load it with `/skill:clear-tech-docs`. pi registers `/skill:<name>` commands by default.
+Then load it with `/skill:write-tech-docs`. pi registers `/skill:<name>` commands by default.
 
 ## License
 

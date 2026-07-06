@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# lint.sh: enforce the clear-tech-docs rules on a markdown doc.
+# lint.sh: enforce the write-tech-docs rules on a markdown doc.
 #
 # Fails (exit 1) if the file contains AI tells:
 #   - em dashes (U+2014) or " -- " pseudo-dashes

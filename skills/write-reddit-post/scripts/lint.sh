@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# lint.sh: enforce the reddit-launch rules on a post.
+# lint.sh: enforce the write-reddit-post rules on a post.
 #
 # Fails (exit 1) on:
 #   - em dashes (U+2014) or " -- " pseudo-dashes
