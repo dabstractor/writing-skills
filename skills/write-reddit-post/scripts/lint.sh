@@ -88,7 +88,7 @@ if [[ -n "$chop" ]]; then
 fi
 
 # 9. Length cap: a launch post is focused, not a press release. Excludes URLs and code.
-WORD_CAP=175
+WORD_CAP=350
 body_words=$(grep -vE 'https?://|www\.' "$tmp" | wc -w | tr -d ' ')
 if [[ "$body_words" -gt "$WORD_CAP" ]]; then
   printf '  [too-long] %s words, cap %s. Keep the vivid problem and one line on the fix; cut the rest.\n' "$body_words" "$WORD_CAP"

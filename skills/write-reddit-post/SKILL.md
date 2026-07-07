@@ -19,9 +19,18 @@ Write as the author, in first person, throughout. "I" should run through the who
 
 Write out "I had" rather than contracting it to "I'd." "I'd" for "I would" is fine; "I'd" for "I had" reads stiff.
 
+## Apprehension
+
+Write like someone who doesn't fully know what they're doing but did it anyway. Show it. Admit the mistakes and confusion that led to building the thing ("I kept accidentally…", "I'd forget…", "I didn't realize…") and admit uncertainty about the result ("my attempt," "I'm not sure this works," "I think," "ok"). A confident narrator dropping the reader into a polished scene is the tell. A fumbling confession is the goal. This matters more than any other rule here: the people who read these posts can spot confident, polished AI prose instantly, and they will tear it apart.
+
+- Bad (punchy, confident scene-set): "I'd hit the deploy key and watch the wrong thing go out, my muscle memory a step ahead of my attention."
+- Good (fumbling confession): "I kept accidentally shipping the wrong branch because I'd forget which one I had checked out. And I kept losing track of what was actually deployed, because I never really wrote it down and just hoped I'd remember."
+
+Both are specific. The good one admits forgetting, accident, and not-knowing. The bad one performs competence.
+
 ## The problem (required, ask if missing)
 
-The post opens by mirroring the reader's experience. Make the problem vivid and specific, not abstract. Give two or three concrete moments the reader has lived: when X happens, you catch yourself doing Y, and you feel Z. Those beats are what make a stranger nod and keep reading.
+The post opens by mirroring the reader's experience, through the apprehension above: the embarrassing, recurring moments, not a polished setup. Make it vivid and specific. Give two or three concrete moments the reader has lived: when X happens, you catch yourself doing Y, and you feel Z. Those beats are what make a stranger nod and keep reading.
 
 Then, in a sentence or two: what you already used, what it cost you, where it fell short, and why you built this. End that beat with the general approach in one plain line.
 
@@ -31,12 +40,12 @@ If the user has not given you the problem and the lived experience, stop and ask
 
 ## Length
 
-Focused, not tiny. Two or three short paragraphs. Aim for about 150 words. The linter fails past 175. The vivid problem is what earns the length; cut anything that is not the reader recognizing their own experience.
+Focused, not tiny. Two or three short paragraphs. Aim for about 200 words. Up to 300 if the post is genuinely complex and needs a thorough explanation. The linter fails past 350. The vivid problem and the apprehension are what earn the length; cut anything else.
 
 ## Shape
 
 - Title: the project name, then what it does and the payoff for the reader. "[Project]: [what it does] so you can [the thing they want]."
-- First paragraph: the problem, vivid. Two or three specific, recognizable scenarios, first person.
+- First paragraph: the problem, vivid and fumbling. Two or three specific, recognizable scenarios, first person.
 - Second paragraph: what you already used, what it cost, where it fell short, your motivation, and the general approach in one plain line.
 - The link.
 - A caveat only when it changes whether someone should bother clicking.
@@ -46,12 +55,12 @@ No feature list. No requirements, license, or palettes. No "how it works." No "w
 
 ## Sign-off
 
-End with a sign-off that has three parts: one specific, answerable question, a real hedge, and an outstretched arm to the community. Not a generic "what do you think?" or "I hope you find it useful."
+End with a sign-off that has three parts: one specific, answerable question, a real hedge, and an outstretched arm to the community. Not a generic "what do you think?" or "I hope you find it useful." In an async broadcast, use "let me know" or "leave a comment." Not "tell me," which is in-person speech.
 
 - Bad: "Let me know what you think! I hope you find it useful. Feedback welcome!"
-- Good: "If you try it, I'd love to know which commands you reach for most. I tuned it for git and docker, and I'm not sure it holds up past that. If you've solved this a different way, I'd rather hear about it than maintain another tool."
+- Good: "If you've got your own setup for this, let me know whether it actually holds up day to day or turns into noise. I built this for my own workflow, and I'm honestly not sure it generalizes. If you already solved this, I'd rather hear how than ship another one."
 
-"Which commands you reach for most" is concrete and easy to answer; "I'm not sure it holds up past that" is a real hedge; "I'd rather hear about it than maintain another tool" is the outstretched arm.
+"Whether it actually holds up" is concrete and answerable; "I'm honestly not sure it generalizes" is a real hedge; "I'd rather hear how than ship another one" is the outstretched arm.
 
 ## Title hook
 
@@ -73,7 +82,7 @@ These are not preferences.
 5. **No hashtags.**
 6. **No documentation.** No features, options, config, requirements, license, palettes, or implementation details. That is the README's job. Name only the general technique, in one line.
 7. **No formulaic transitions or signposting.** Cut "moreover," "furthermore," "however," "hence," "in conclusion," "in summary," "it's worth noting."
-8. **Use hedges.** Sound human, not overconfident. Soften claims with "just," "only," "almost," "mostly," "I think." ("It was just an env var," "almost every deploy," "I think it holds up.")
+8. **Use hedges and softeners.** Sound human, not overconfident: "just," "only," "almost," "mostly," "relatively," "pretty much," "I think." Use "ok" freely; it is informal and natural, and models rarely use it well.
 9. **Cut "that" when it is filler.** "I thought that it was slow" becomes "I thought it was slow."
 10. **Run the linter before you finish.** `bash scripts/lint.sh <file>`. Fix every hit. Re-run until it exits 0.
 
@@ -91,11 +100,11 @@ These slip past the banned-word list but read as AI. The linter catches the ones
 - **Melodrama.** Bad: "I'd scramble to rebuild the query." Good: "I'd close a query and rewrite it five minutes later."
 - **Polished aphorism.** Bad: "where other tools manage your work, this one manages your focus." Good: "instead of listing your work like other tools, this one picks the next thing to look at."
 
-One long pair, showing all of these fixed and commas, periods, and pauses doing real work (not choppy stubs):
+One long pair, showing all of these fixed, plus apprehension and a real sign-off:
 
 **Bad:** I built Lately because my terminal had a real blind spot for the commands I'd just run. I'd hit Up twenty times hunting for that one docker exec, finish a thing, and scramble to retype it from memory. My day-one starship prompt didn't help either. Every lost minute traced back to the same root: my shell only remembered the recent past, not the relevant past. I wanted Lately to surface the right command on an instinctual level, the way a good autocomplete reads your mind before you finish typing, so I built it to watch what you run and float the likely next command to the top. Where other tools log your history, this one understands your intent.
 
-**Good:** I built Lately because I kept losing the last command I ran. I'd scroll back through history looking for one docker exec, finish a deploy, and then retype the command from scratch because it had scrolled out of reach. My prompt didn't help, and neither did any of the history tools I tried, because they all just logged everything in order. What I actually wanted was the command I was about to need, already at the top. Lately watches what you run, and when you open it, the likely next command is sitting there waiting, instead of buried under fifty entries you don't care about anymore.
+**Good:** I kept losing the command I needed because I'd forget it was three entries up, or I'd accidentally close the terminal and it was just gone. I tried a couple of history tools and they were ok, but they pretty much just logged everything in order, which didn't really help. What I wanted was the command I was about to need, already at the top. Lately is my attempt at that. It's relatively simple, and I'm honestly not sure it works outside of how I use my shell. If you try it, let me know whether it actually surfaces the right thing for you, or just adds noise. If you already have something that works, I'd rather hear about it.
 
 ## Audience
 
@@ -118,7 +127,7 @@ Short does not mean staccato. Human prose flows and varies in length.
 
 ## Voice
 
-Humble and plain. Say what it does and stop. Do not oversell. A caveat is fine when it changes whether someone should click. End with the sign-off.
+Humble, plain, and a little unsure of itself. Say what it does and stop. Do not oversell. A caveat is fine when it changes whether someone should click. End with the sign-off.
 
 ## Banned words (reference)
 
@@ -130,4 +139,4 @@ Note: function words like "it," "that" (as a pronoun), "can," and "may" are fine
 
 ## Lint gate
 
-`bash scripts/lint.sh <file>` fails on: em dashes, markdown formatting, semicolons, hashtags, banned words, the prose-tell phrases ("on a ___ level", "blind spot", "the same root"), sentences that drop the leading "I", runs of short choppy sentences, and body over 175 words. Run it on the draft. Fix every hit. Re-run until it passes.
+`bash scripts/lint.sh <file>` fails on: em dashes, markdown formatting, semicolons, hashtags, banned words, the prose-tell phrases ("on a ___ level", "blind spot", "the same root"), sentences that drop the leading "I", runs of short choppy sentences, and body over 350 words. Run it on the draft. Fix every hit. Re-run until it passes.
