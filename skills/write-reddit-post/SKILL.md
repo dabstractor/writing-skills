@@ -108,6 +108,20 @@ One long pair, showing all of these fixed, plus apprehension and a real sign-off
 
 **Good:** I struggled with losing commands I actually needed. I'd forget the one I wanted was three entries up, or I'd accidentally close the terminal and it was just gone. I tried a couple of history tools and they were ok, but they pretty much just logged everything in order, which didn't really help. What I wanted was the command I was about to need, already at the top. Lately is my attempt at that. It's relatively simple, and I'm honestly not sure it works outside of how I use my shell. If you try it, let me know whether it actually surfaces the right thing for you, or just adds noise. If you already have something that works, I'd rather hear about it.
 
+## A real finished post
+
+A complete, real post (the author's own), showing the owned-struggle opening, apprehension mid-post, a one-line technique, and a real sign-off. It ran near the length cap, so treat it as the upper bound, not the target.
+
+> Title: Tubular: colors the whole tmux status bar and pane borders by mode, so you always know what tmux is about to do
+>
+> I struggled for a long time with not knowing what tmux mode I was in. I'd mean to type into my editor and instead fire off a tmux command, sometimes closing a window I needed, because I was still in prefix mode. I'd zoom a pane to focus, then spend a minute flipping through every window looking for the pane I was just reading, when it was right there the whole time, hidden behind the zoomed one. It happened over and over before I even thought of it as something I could fix. Once I started using Claude Code it got worse, because I couldn't just spam Escape to get out of copy mode anymore, since one too many escapes kills the request stream.
+>
+> I tried prefix-highlight and liked it, and honestly it made me realize tmux could be customized way more than I thought, which is when this started feeling fixable. The catch is it just puts a little indicator in the corner, so I kept glancing up to check it. I had been using omerxx's catppuccin tmux layout for a long time, and it was nice, but it didn't help with any of this. What I wanted was for each mode to look noticeably different without me reading anything, so it settles into muscle memory. Tubular repaints the whole status bar and every pane border in the color of the current mode, so prefix, copy, and zoom each have their own look, and you just feel which one you're in.
+>
+> https://github.com/dabstractor/tubular-tmux
+>
+> If you've already got your own way of tracking which mode you're in, let me know whether a full-color bar actually helps or just turns into noise once the novelty wears off. I built this for my own setup, and I'm honestly not sure it generalizes to other people's configs. If you already solved this, I'd rather hear how than ship another plugin.
+
 ## Audience
 
 Pick one primary subreddit and write the post for it. The post is a single piece of content: you cross-post the exact same post anywhere else. Never write different versions per subreddit.
