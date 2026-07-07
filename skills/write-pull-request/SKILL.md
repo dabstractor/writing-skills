@@ -7,7 +7,7 @@ description: "Write a pull request to an open source repository. Lead with the u
 
 Write a pull request, most often to an open source project, sometimes to an internal one. The audience is the maintainer: busy, protective of the codebase, and allergic to filler.
 
-A good PR is a little bit reddit (a person explaining what they hit), a little bit readme (clear, scannable, technical), and a little bit git commit message (terse, imperative, signal-dense). Lean technical, written in a personal voice. For open source that voice is also gracious; for an enterprise project it reads like technical docs, terse and factual with no regard for feelings. Most PRs are open source.
+A good PR is a little bit reddit (a person explaining what they hit), a little bit readme (clear, scannable, technical), and a little bit git commit message (terse, imperative, signal-dense). Lean technical, written in a personal voice. For open source that voice is also warm and personal; for an enterprise project it reads like technical docs, terse and factual with no regard for feelings. Most PRs are open source.
 
 Before writing anything else, do two things: read the diff so you know exactly what changed, and check for a linked issue.
 
@@ -51,7 +51,7 @@ If the user has not told you what they were doing when they hit this, ask. Do no
 - **Issue**: `Fixes #N`.
 - **Notes**: breaking changes, migration steps, perf, anything the reviewer must know. Omit the section entirely if there is nothing to say.
 
-Match the scope to the change. A one-line fix earns a title, a one-line problem, and the diff reference, not a full template. Do not pad with empty sections.
+Match the scope to the change. A one-line fix earns a title, a one-line problem, and the diff reference, not a full template. Do not pad with empty sections. For open source, lead with the warm prose and use these sections only as much as the change needs. For enterprise, this structured template is the default.
 
 ## Hard rules
 
@@ -66,17 +66,143 @@ Match the scope to the change. A one-line fix earns a title, a one-line problem,
 9. **Specific and verifiable.** Real versions, real commands, real test names. Not "tested thoroughly."
 10. **Run the linter before you finish.** `bash scripts/lint.sh <file>`. Fix every hit. Re-run until it exits 0.
 11. **Diff before you write.** Read the full diff first and base the description on it. Never claim a change that is not in the diff.
-12. **Open source: lead with thanks.** If the project is open source, open the body with a genuine compliment and thanks, and stay non-presumptuous throughout. See Tone.
+12. **Open source: be a person, not a pitch.** Warm, casual, first-time-contributor voice. Read the room (issues, `wontfix`, out-of-scope notes) and acknowledge their stance. For unsolicited work, frame it as "I built it for myself, sharing in case it helps." No sales pitch, no groveling. See Tone and Examples.
 
 ## Tone: open source vs enterprise
 
 Figure out which kind of project this is. Open source signals: a public remote (github.com, gitlab.com, and the like), a LICENSE file, a CONTRIBUTING.md, public issues. Enterprise signals: an internal git host, a private repo, no LICENSE. If you cannot tell, ask, or assume open source, since most PRs are.
 
-**Open source: be gracious.** Maintainers are often volunteers and always busy, and rudeness is the fastest way to get a PR ignored or rejected. Open the body with a genuine, specific compliment and real thanks for their work. Never be presumptuous. Do not assume they want this change, want it done your way, or will take it at all. Frame the work as offered, not demanded. "I found this useful and I am offering it in case it helps," not "you should merge this." Offer to rework it to fit their direction. Read CONTRIBUTING.md and match the style of their existing PRs.
+**Open source: be a person, not a pitch.** You are a first-time contributor who loves the tool, talking to the people who built it. Write warm, casual, and genuine, the way you would email a stranger whose work you admire. Maintainers are often volunteers and always busy; a stiff corporate tone or a sales pitch gets you ignored or rejected.
 
-**Enterprise: write it like technical docs.** Terse, factual, no politeness, no regard for feelings. Coworkers want the facts and the diff. Skip the opener entirely.
+Three things make it land:
+- **Lead with real warmth.** One genuine, specific line about why you like the project and how you use it. Not a generic "great project!" This is not enthusiasm theater. Theater is the marketing words (seamless, empowers, game-changing); warmth is "I use this every day and it saved me a bunch of time."
+- **Read the room, and say what you found.** Before writing, look at issues, `wontfix` labels, out-of-scope notes, and discussions for the maintainers' stance on this change. If they have signaled reluctance or non-interest, acknowledge it plainly and respectfully, and frame the PR as something you wanted for yourself that you are sharing. Never argue the maintainer's own thesis back at them to justify the change.
+- **Default to "I built it for myself."** For anything unsolicited, the honest frame is: I wanted this, I made it for my own use, I am sharing it in case it helps, no pressure to take it. That frame kills the sales pitch.
 
-Both: confident about the change, humble about anything you are unsure of (flag it explicitly). No corporate tone, no enthusiasm theater.
+Be humble but not pathetic. A confident peer, not a supplicant groveling and not a consultant telling them their code is wrong. Offer to rework or drop it. Read CONTRIBUTING.md and match the style of their existing PRs.
+
+**Enterprise: write it like technical docs.** Terse, factual, no politeness, no regard for feelings. Coworkers want the facts and the diff. Skip the opener entirely. The structured template (Problem, What this changes, Testing, Notes) is the default here.
+
+For open source, do not default to the structured template. Lead with the human paragraphs, then give the technical explanation plainly, in only as much structure as the change needs.
+
+Confident about the change, humble about anything you are unsure of (flag it explicitly).
+
+## Examples
+
+Good open source PRs. Notice the voice in each: warm, specific, read-the-room, then plain tech. Replace the bracketed parts with the real details; do not copy the brackets.
+
+GOOD: unsolicited feature they were not planning:
+
+```text
+Add [what the feature does]
+
+[Project] has [genuine, specific thing you like about it], I [how you actually use it day to day].
+
+I [saw in #issue / read in the docs] that [the maintainers aren't planning to do this / it's out of scope], and that makes sense to me. But I kept wanting it anyway, so I built it for myself over [the weekend / a couple evenings]. No pressure at all to take it, I'm sharing it in case it's useful or sparks an idea.
+
+What it does, roughly:
+- [change 1]
+- [change 2]
+
+[how you tested it]. Happy to rework any of it, or drop it entirely if this isn't a direction you want to go.
+```
+
+GOOD: bugfix:
+
+```text
+Fix [what was broken]
+
+Hi! [One genuine line about liking the project.]
+
+[What happened to you, plainly] when [the exact trigger]. I had a little time so I dug in and patched it, hope it helps:
+- [the fix]
+- [the test you added]
+
+[how to verify].
+```
+
+GOOD: open issue they want fixed:
+
+```text
+[Fix / implement what the issue asks for]
+
+[Project] is [genuine specific like], [how you use it].
+
+I saw #[N] open and it looked like something I could take a crack at, so I gave it a go. Happy to reshape it to fit how the codebase likes things.
+
+Roughly:
+- [change 1]
+- [change 2]
+
+[how to verify]. Let me know if you'd rather it land a different way.
+```
+
+GOOD: docs fix:
+
+```text
+Docs: [what was wrong]
+
+[One genuine line about liking the project.]
+
+I was following the [setup / usage] guide and got stuck at [the step]: [what it told you to do] no longer works because [reason]. Figured I'd fix it for the next person.
+
+- [the doc change]
+
+[verification, e.g., walked through the updated steps fresh].
+```
+
+GOOD: performance:
+
+```text
+Speed up [the slow thing]
+
+[Genuine like.]
+
+On my end [the operation] was taking [~real time] on [the case that triggered it], which felt off, so I profiled it. [The bottleneck] stood out, so I [the approach].
+
+Roughly:
+- [change 1]
+- [change 2]
+
+Down to [~new time] on my data, no behavior change. [how you benchmarked].
+```
+
+Failure modes. Do not write any of these.
+
+BAD: the sales pitch:
+
+```text
+Add [feature]
+
+Thank you for maintaining such an excellent project!
+
+This pull request introduces [feature], delivering a more seamless and intuitive [experience / workflow]. By leveraging [approach], this change empowers users to [benefit]. This enhancement aligns strongly with the project's vision.
+```
+
+BAD: the enterprise spec (no human voice):
+
+```text
+Add [feature]
+
+## Problem
+[Project]'s stated scope is [X]. [Feature] constitutes a critical component of [Y], and its absence introduces a significant gap in [Z]...
+```
+
+BAD: the presumptuous refactor:
+
+```text
+Refactor [module] for cleanliness
+
+The [module] code is quite messy and hard to maintain. This PR cleans it up by [approach], making it more robust and elegant. You really should adopt this pattern across the codebase.
+```
+
+BAD: the over-grovel:
+
+```text
+Add [feature]
+
+First of all I'm so sorry if this is terrible, I'm just a beginner and I'm sure my code is awful. Please don't be mad. I know you probably won't want this but I tried my best...
+```
 
 ## Banned words (reference)
 
