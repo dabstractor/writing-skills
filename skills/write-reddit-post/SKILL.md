@@ -23,8 +23,10 @@ Write out "I had" rather than contracting it to "I'd." "I'd" for "I would" is fi
 
 Write like someone who doesn't fully know what they're doing but did it anyway. Show it. Admit the mistakes and confusion that led to building the thing ("I kept accidentally…", "I'd forget…", "I didn't realize…") and admit uncertainty about the result ("my attempt," "I'm not sure this works," "I think," "ok"). A confident narrator dropping the reader into a polished scene is the tell. A fumbling confession is the goal. This matters more than any other rule here: the people who read these posts can spot confident, polished AI prose instantly, and they will tear it apart.
 
-- Bad (punchy, confident scene-set): "I'd hit the deploy key and watch the wrong thing go out, my muscle memory a step ahead of my attention."
-- Good (fumbling confession): "I kept accidentally shipping the wrong branch because I'd forget which one I had checked out. And I kept losing track of what was actually deployed, because I never really wrote it down and just hoped I'd remember."
+**Open by owning the struggle.** The first sentence names the difficulty directly and upsells it, not minimizes it. "I struggled with…", "I had a hard time with…", "I never understood…", "I spent months fighting…". Do not open by dropping into a polished action scene ("I'd zoom a pane…"), and do not minimize it ("I kept accidentally…", "it was just a small thing"). Make the frustration feel real and significant before any specifics.
+
+- Bad (punchy scene-set, drops you in): "I'd hit the deploy key and watch the wrong thing go out, my muscle memory a step ahead of my attention."
+- Good (owns the struggle first): "I struggled with this for a long time. I'd ship from the wrong branch because I kept forgetting which one I had checked out, and I had a hard time keeping track of what was actually deployed."
 
 Both are specific. The good one admits forgetting, accident, and not-knowing. The bad one performs competence.
 
@@ -104,7 +106,7 @@ One long pair, showing all of these fixed, plus apprehension and a real sign-off
 
 **Bad:** I built Lately because my terminal had a real blind spot for the commands I'd just run. I'd hit Up twenty times hunting for that one docker exec, finish a thing, and scramble to retype it from memory. My day-one starship prompt didn't help either. Every lost minute traced back to the same root: my shell only remembered the recent past, not the relevant past. I wanted Lately to surface the right command on an instinctual level, the way a good autocomplete reads your mind before you finish typing, so I built it to watch what you run and float the likely next command to the top. Where other tools log your history, this one understands your intent.
 
-**Good:** I kept losing the command I needed because I'd forget it was three entries up, or I'd accidentally close the terminal and it was just gone. I tried a couple of history tools and they were ok, but they pretty much just logged everything in order, which didn't really help. What I wanted was the command I was about to need, already at the top. Lately is my attempt at that. It's relatively simple, and I'm honestly not sure it works outside of how I use my shell. If you try it, let me know whether it actually surfaces the right thing for you, or just adds noise. If you already have something that works, I'd rather hear about it.
+**Good:** I struggled with losing commands I actually needed. I'd forget the one I wanted was three entries up, or I'd accidentally close the terminal and it was just gone. I tried a couple of history tools and they were ok, but they pretty much just logged everything in order, which didn't really help. What I wanted was the command I was about to need, already at the top. Lately is my attempt at that. It's relatively simple, and I'm honestly not sure it works outside of how I use my shell. If you try it, let me know whether it actually surfaces the right thing for you, or just adds noise. If you already have something that works, I'd rather hear about it.
 
 ## Audience
 
