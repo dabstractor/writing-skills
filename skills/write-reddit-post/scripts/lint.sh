@@ -53,7 +53,7 @@ furthermore however hence boost skyrocketing ever-evolving powerful"
 regex="$(printf '%s' "$words" | tr -s ' ' '\n' | paste -sd'|' -)"
 n=$(grep -ciEw "$regex" "$tmp" || true); grep -niEw "$regex" "$tmp" | sed 's/^/  [tell-word] /' || true; hits=$((hits+n))
 
-phrases='not just.{0,20}but also|in a world where|in conclusion|in summary|remains to be seen|dive deep|shed light|game.?changer'
+phrases='not just.{0,20}but also|in a world where|in conclusion|in summary|remains to be seen|dive deep|shed light|game.?changer|on an? [a-z]+ level|blind spot|the same root'
 n=$(grep -ciE "$phrases" "$tmp" || true); grep -niE "$phrases" "$tmp" | sed 's/^/  [tell-phrase] /' || true; hits=$((hits+n))
 
 # 6. Dropped leading "I": a sentence that starts with a bare past-tense verb.

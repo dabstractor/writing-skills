@@ -17,6 +17,8 @@ The repo has a README. Do not reproduce it.
 
 Write as the author, in first person, throughout. "I" should run through the whole post. The opening may set the scene first ("In [context], I kept...") before the first "I" lands, as long as a real person is talking, not a product page.
 
+Write out "I had" rather than contracting it to "I'd." "I'd" for "I would" is fine; "I'd" for "I had" reads stiff.
+
 ## The problem (required, ask if missing)
 
 The post opens by mirroring the reader's experience. Make the problem vivid and specific, not abstract. Give two or three concrete moments the reader has lived: when X happens, you catch yourself doing Y, and you feel Z. Those beats are what make a stranger nod and keep reading.
@@ -38,8 +40,18 @@ Focused, not tiny. Two or three short paragraphs. Aim for about 150 words. The l
 - Second paragraph: what you already used, what it cost, where it fell short, your motivation, and the general approach in one plain line.
 - The link.
 - A caveat only when it changes whether someone should bother clicking.
+- A sign-off (see below).
 
-No feature list. No requirements, license, or palettes. No "how it works." No "what's next." No closing question unless it rises on its own.
+No feature list. No requirements, license, or palettes. No "how it works." No "what's next."
+
+## Sign-off
+
+End with a sign-off that has three parts: one specific, answerable question, a real hedge, and an outstretched arm to the community. Not a generic "what do you think?" or "I hope you find it useful."
+
+- Bad: "Let me know what you think! I hope you find it useful. Feedback welcome!"
+- Good: "If you try it, I'd love to know which commands you reach for most. I tuned it for git and docker, and I'm not sure it holds up past that. If you've solved this a different way, I'd rather hear about it than maintain another tool."
+
+"Which commands you reach for most" is concrete and easy to answer; "I'm not sure it holds up past that" is a real hedge; "I'd rather hear about it than maintain another tool" is the outstretched arm.
 
 ## Title hook
 
@@ -61,9 +73,29 @@ These are not preferences.
 5. **No hashtags.**
 6. **No documentation.** No features, options, config, requirements, license, palettes, or implementation details. That is the README's job. Name only the general technique, in one line.
 7. **No formulaic transitions or signposting.** Cut "moreover," "furthermore," "however," "hence," "in conclusion," "in summary," "it's worth noting."
-8. **No hedging filler.** Cut "just," "really," "very," "actually," "basically," "literally," "probably," "maybe."
+8. **Use hedges.** Sound human, not overconfident. Soften claims with "just," "only," "almost," "mostly," "I think." ("It was just an env var," "almost every deploy," "I think it holds up.")
 9. **Cut "that" when it is filler.** "I thought that it was slow" becomes "I thought it was slow."
 10. **Run the linter before you finish.** `bash scripts/lint.sh <file>`. Fix every hit. Re-run until it exits 0.
+
+## Prose tells
+
+These slip past the banned-word list but read as AI. The linter catches the ones it can; the rest are judgment.
+
+- **Coined analogy.** Bad: "the right file appears like a bartender who knows your usual." Good: "the file I needed was already at the top."
+- **"on a ___ level."** Bad: "cuts wasted motion on a fundamental level." Good: "deletes the step where I rename the export by hand."
+- **Root-cause wrap-up.** Bad: "every broken deploy traced to the same root: an env var." Good: "most of my broken deploys were just an env var I forgot to set."
+- **Colon-thesis (enumerate, then diagnose).** Bad: "I'd merge, conflict, stash, lose an hour. The pattern was the same: stale branches." Good: "I kept losing an hour to stale branches I couldn't see."
+- **Metaphor or cliché.** Bad: "my workflow had a blind spot around drafts." Good: "my workflow didn't show which notes were drafts."
+- **Vague placeholder.** Bad: "I'd finish a thing and close the window." Good: "I'd finish a query and close the window."
+- **Performed authenticity.** Bad: "my day-one gruvbox config had the same problem." Good: "my old config had the same problem."
+- **Melodrama.** Bad: "I'd scramble to rebuild the query." Good: "I'd close a query and rewrite it five minutes later."
+- **Polished aphorism.** Bad: "where other tools manage your work, this one manages your focus." Good: "instead of listing your work like other tools, this one picks the next thing to look at."
+
+One long pair, showing all of these fixed and commas, periods, and pauses doing real work (not choppy stubs):
+
+**Bad:** I built Lately because my terminal had a real blind spot for the commands I'd just run. I'd hit Up twenty times hunting for that one docker exec, finish a thing, and scramble to retype it from memory. My day-one starship prompt didn't help either. Every lost minute traced back to the same root: my shell only remembered the recent past, not the relevant past. I wanted Lately to surface the right command on an instinctual level, the way a good autocomplete reads your mind before you finish typing, so I built it to watch what you run and float the likely next command to the top. Where other tools log your history, this one understands your intent.
+
+**Good:** I built Lately because I kept losing the last command I ran. I'd scroll back through history looking for one docker exec, finish a deploy, and then retype the command from scratch because it had scrolled out of reach. My prompt didn't help, and neither did any of the history tools I tried, because they all just logged everything in order. What I actually wanted was the command I was about to need, already at the top. Lately watches what you run, and when you open it, the likely next command is sitting there waiting, instead of buried under fifty entries you don't care about anymore.
 
 ## Audience
 
@@ -86,7 +118,7 @@ Short does not mean staccato. Human prose flows and varies in length.
 
 ## Voice
 
-Humble and plain. Say what it does and stop. Do not oversell. A caveat is fine when it changes whether someone should click. No mandated closing question.
+Humble and plain. Say what it does and stop. Do not oversell. A caveat is fine when it changes whether someone should click. End with the sign-off.
 
 ## Banned words (reference)
 
@@ -98,4 +130,4 @@ Note: function words like "it," "that" (as a pronoun), "can," and "may" are fine
 
 ## Lint gate
 
-`bash scripts/lint.sh <file>` fails on: em dashes, markdown formatting, semicolons, hashtags, banned words, sentences that drop the leading "I", runs of short choppy sentences, and body over 175 words. Run it on the draft. Fix every hit. Re-run until it passes.
+`bash scripts/lint.sh <file>` fails on: em dashes, markdown formatting, semicolons, hashtags, banned words, the prose-tell phrases ("on a ___ level", "blind spot", "the same root"), sentences that drop the leading "I", runs of short choppy sentences, and body over 175 words. Run it on the draft. Fix every hit. Re-run until it passes.
